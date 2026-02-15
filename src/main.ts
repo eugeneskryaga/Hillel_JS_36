@@ -10,7 +10,7 @@ let notAssigned: undefined;
 
 let something: unknown;
 something = "string";
-something = "55";
+something = 55;
 something = true;
 
 // Task #3
@@ -82,7 +82,7 @@ id = "100";
 
 // Task #8
 
-function formatID(id: number | string) {
+function formatID(id: number | string): string {
   return typeof id === "number" ? "ID: 123" : "ID: abc";
 }
 
@@ -120,13 +120,16 @@ function greet(name: string): void {
 
 // Task #15
 
-function getDiscount(price: number, discount: number) {
+function getDiscount(price: number, discount: number): number {
   return price - (price * discount) / 100;
 }
 
 // Task #16
 
-function handleResponse(status: "success" | "error", data: unknown) {
+function handleResponse(
+  status: "success" | "error",
+  data: unknown,
+): string | number | undefined {
   if (status === "success" && typeof data === "string") {
     return data.length;
   } else if (status === "success" && typeof data === "number") {
